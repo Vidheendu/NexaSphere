@@ -3,6 +3,7 @@ import { api, auth } from '../services/api';
 import { Skeleton } from '../components/Skeleton';
 import { AdminIcon } from '../components/AdminIcon';
 import { PermissionGuard } from '../components/PermissionGuard';
+import { CopyButton } from '../components/CopyButton';
 
 export function DashboardHome() {
   const [stats, setStats] = useState(null);
@@ -145,6 +146,15 @@ export function DashboardHome() {
             <AdminIcon name="FileText" size={18} aria-hidden="true" /> Membership
           </a>
         </div>
+      </div>
+      <div
+        style={{
+          marginTop: '24px',
+          display: 'flex',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <CopyButton text={window.location.href} label="Copy Dashboard Link" />
       </div>
     </div>
   );
